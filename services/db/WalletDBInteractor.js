@@ -17,7 +17,7 @@ class WalletDBInteractor {
 
             if(_.isEmpty(sameWallet)) {
                 const created = await Wallet.create(walletInfo);
-                if(!_.isEmpty(create)) {
+                if(!_.isEmpty(created)) {
                     return {
                         status: errorCodes.success,
                         err: null,

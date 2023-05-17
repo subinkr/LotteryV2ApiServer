@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
             await Wallet.create({
                 account_name: "master",
                 account: process.env.MASTER_WALLET_ADDRESS,
-                private_key: MASTER_WALLET_PRIVATE_KEY,
+                private_key: process.env.MASTER_WALLET_PRIVATE_KEY,
                 is_master: true,
             })
         }

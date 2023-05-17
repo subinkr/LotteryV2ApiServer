@@ -1,7 +1,7 @@
 const crypto = require("crypto");
 const path = require("path");
 const envType = process.env.NODE_ENV || "development";
-require("dotenv").config( {path: path.join(_dirname, `../config/${envType}.env`)});
+require("dotenv").config( {path: path.join(__dirname, `../config/${envType}.env`)});
 const IV_LENGTH = 16;
 
 class CipherUtil {
@@ -17,7 +17,7 @@ class CipherUtil {
             const encrypted = cipher.update(text);
 
             return (
-                iv.toString("hex") + ":" + Buffer.concat([encrpted, cipher.final()]).toString("hex")
+                iv.toString("hex") + ":" + Buffer.concat([encrypted, cipher.final()]).toString("hex")
             );
         }catch (err) {
             console.error(`[${funcName}] err: `, err);

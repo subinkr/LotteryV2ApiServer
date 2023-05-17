@@ -4,7 +4,7 @@ class ResponseHandler {
     static sendSuccess(res, message, status) {
         const funcName = "sendSuccess";
         return (data, globalData) => {
-            if(_.isUndefined(status)) {
+            if(_.isEmpty(status)) {
                 status = 200;
             }
             console.log(`[${funcName}] data: `, data);
